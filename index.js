@@ -22,6 +22,20 @@ app.get('/', (req, res) => {
 
 });
 
+app.get('/err', (req, res) => {
+
+    throw new Error ("AAAAAaaaaaa!!!!!");
+
+});
+
+
+app.get('/die', (req, res) => {
+
+    process.exit();
+
+});
+
+
 function pdf2xml(pdfContent) {
     return new Promise((resolve, reject) => {
         const pdftoxml = spawn(
