@@ -4,6 +4,10 @@ WORKDIR /usr/src/app
 
 COPY package*.json ./
 
+RUN apt update
+
+RUN apt install poppler-utils -y
+
 RUN npm install
 
 COPY . .
